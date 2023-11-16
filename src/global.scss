@@ -1,0 +1,636 @@
+* {
+  box-sizing: border-box;
+  padding: 0;
+  margin: 0;
+}
+
+html,
+body {
+  max-width: 100vw;
+  overflow-x: hidden;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+p,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  margin-bottom: 0;
+}
+
+button,
+input[type="submit"],
+input[type="reset"] {
+  background: none;
+  color: inherit;
+  border: none;
+  padding: 0;
+  font: inherit;
+  cursor: pointer;
+  outline: inherit;
+}
+
+@media screen and (min-width: 2500px) {
+  div,
+  p {
+    font-size: 32px;
+  }
+}
+
+// bootstrap responsive
+
+@media screen and (min-width: 2500px) {
+  html {
+    .m-1 {
+      margin: 0.5rem !important;
+    }
+    .m-2 {
+      margin: 1rem !important;
+    }
+    .m-3 {
+      margin: 2rem !important;
+    }
+    .m-4 {
+      margin: 3rem !important;
+    }
+    .m-5 {
+      margin: 6rem !important;
+    }
+
+    .mx-1 {
+      margin-left: 0.5rem !important;
+      margin-right: 0.5rem !important;
+    }
+    .mx-2 {
+      margin-left: 1rem !important;
+      margin-right: 1rem !important;
+    }
+    .mx-3 {
+      margin-left: 2rem !important;
+      margin-right: 2rem !important;
+    }
+    .mx-4 {
+      margin-left: 3rem !important;
+      margin-right: 3rem !important;
+    }
+    .mx-5 {
+      margin-left: 6rem !important;
+      margin-right: 6rem !important;
+    }
+
+    .my-1 {
+      margin-top: 0.5rem !important;
+      margin-bottom: 0.5rem !important;
+    }
+    .my-2 {
+      margin-top: 1rem !important;
+      margin-bottom: 1rem !important;
+    }
+    .my-3 {
+      margin-top: 2rem !important;
+      margin-bottom: 2rem !important;
+    }
+    .my-4 {
+      margin-top: 3rem !important;
+      margin-bottom: 3rem !important;
+    }
+    .my-5 {
+      margin-top: 6rem !important;
+      margin-bottom: 6rem !important;
+    }
+
+    .mt-1 {
+      margin-top: 0.5rem !important;
+    }
+    .mt-2 {
+      margin-top: 1rem !important;
+    }
+    .mt-3 {
+      margin-top: 2rem !important;
+    }
+    .mt-4 {
+      margin-top: 3rem !important;
+    }
+    .mt-5 {
+      margin-top: 6rem !important;
+    }
+
+    .me-1 {
+      margin-right: 0.5rem !important;
+    }
+    .me-2 {
+      margin-right: 1rem !important;
+    }
+    .me-3 {
+      margin-right: 2rem !important;
+    }
+    .me-4 {
+      margin-right: 3rem !important;
+    }
+    .me-5 {
+      margin-right: 6rem !important;
+    }
+
+    .mb-1 {
+      margin-bottom: 0.5rem !important;
+    }
+    .mb-2 {
+      margin-bottom: 1rem !important;
+    }
+    .mb-3 {
+      margin-bottom: 2rem !important;
+    }
+    .mb-4 {
+      margin-bottom: 3rem !important;
+    }
+    .mb-5 {
+      margin-bottom: 6rem !important;
+    }
+
+    .ms-1 {
+      margin-left: 0.5rem !important;
+    }
+    .ms-2 {
+      margin-left: 1rem !important;
+    }
+    .ms-3 {
+      margin-left: 2rem !important;
+    }
+    .ms-4 {
+      margin-left: 3rem !important;
+    }
+    .ms-5 {
+      margin-left: 6rem !important;
+    }
+
+    .p-1 {
+      padding: 0.5rem !important;
+    }
+    .p-2 {
+      padding: 1rem !important;
+    }
+    .p-3 {
+      padding: 2rem !important;
+    }
+    .p-4 {
+      padding: 3rem !important;
+    }
+    .p-5 {
+      padding: 6rem !important;
+    }
+
+    .px-1 {
+      padding-left: 0.5rem !important;
+      padding-right: 0.5rem !important;
+    }
+    .px-2 {
+      padding-left: 1rem !important;
+      padding-right: 1rem !important;
+    }
+    .px-3 {
+      padding-left: 2rem !important;
+      padding-right: 2rem !important;
+    }
+    .px-4 {
+      padding-left: 3rem !important;
+      padding-right: 3rem !important;
+    }
+    .px-5 {
+      padding-left: 6rem !important;
+      padding-right: 6rem !important;
+    }
+
+    .py-1 {
+      padding-top: 0.5rem !important;
+      padding-bottom: 0.5rem !important;
+    }
+    .py-2 {
+      padding-top: 1rem !important;
+      padding-bottom: 1rem !important;
+    }
+    .py-3 {
+      padding-top: 2rem !important;
+      padding-bottom: 2rem !important;
+    }
+    .py-4 {
+      padding-top: 3rem !important;
+      padding-bottom: 3rem !important;
+    }
+    .py-5 {
+      padding-top: 6rem !important;
+      padding-bottom: 6rem !important;
+    }
+
+    .pt-1 {
+      padding-top: 0.5rem !important;
+    }
+    .pt-2 {
+      padding-top: 1rem !important;
+    }
+    .pt-3 {
+      padding-top: 2rem !important;
+    }
+    .pt-4 {
+      padding-top: 3rem !important;
+    }
+    .pt-5 {
+      padding-top: 6rem !important;
+    }
+
+    .pe-1 {
+      padding-right: 0.5rem !important;
+    }
+    .pe-2 {
+      padding-right: 1rem !important;
+    }
+    .pe-3 {
+      padding-right: 2rem !important;
+    }
+    .pe-4 {
+      padding-right: 3rem !important;
+    }
+    .pe-5 {
+      padding-right: 6rem !important;
+    }
+
+    .pb-1 {
+      padding-bottom: 0.5rem !important;
+    }
+    .pb-2 {
+      padding-bottom: 1rem !important;
+    }
+    .pb-3 {
+      padding-bottom: 2rem !important;
+    }
+    .pb-4 {
+      padding-bottom: 3rem !important;
+    }
+    .pb-5 {
+      padding-bottom: 6rem !important;
+    }
+
+    .ps-1 {
+      padding-left: 0.5rem !important;
+    }
+    .ps-2 {
+      padding-left: 1rem !important;
+    }
+    .ps-3 {
+      padding-left: 2rem !important;
+    }
+    .ps-4 {
+      padding-left: 3rem !important;
+    }
+    .ps-5 {
+      padding-left: 6rem !important;
+    }
+  }
+}
+
+//box-shadow
+
+.bs-1 {
+  box-shadow: 0px 3px 6px #00000029;
+}
+
+// background
+
+@mixin bg($color) {
+  background: $color !important;
+}
+
+.bg-darkcyan {
+  @include bg(darkcyan);
+}
+
+.bg-transparent {
+  background-color: transparent !important;
+}
+
+// text color
+
+@mixin text($color) {
+  color: $color !important;
+}
+
+.text-blue {
+  @include text(blue);
+}
+
+// font size
+
+@mixin fs($size) {
+  font-size: $size !important;
+  @media screen and (min-width: 2500px) {
+    font-size: calc($size * 2) !important;
+  }
+}
+
+// font size lower than 12px is bad for seo
+
+.fs-12px {
+  @include fs(12px);
+}
+
+.fs-18px {
+  @include fs(18px);
+}
+
+.fs-20px {
+  @include fs(20px);
+}
+
+.fs-30px {
+  @include fs(30px);
+}
+
+.fs-50px {
+  @include fs(50px);
+}
+
+//font weight
+
+@mixin fw($size) {
+  font-weight: $size !important;
+}
+
+.fw-100 {
+  @include fw(100);
+}
+
+.fw-200 {
+  @include fw(200);
+}
+
+.fw-300 {
+  @include fw(300);
+}
+
+.fw-400 {
+  @include fw(400);
+}
+
+.fw-500 {
+  @include fw(500);
+}
+
+.fw-600 {
+  @include fw(600);
+}
+
+.fw-700 {
+  @include fw(700);
+}
+
+.fw-800 {
+  @include fw(800);
+}
+
+//line-height
+
+@mixin lh($size) {
+  line-height: $size !important;
+  @media screen and (min-width: 2500px) {
+    line-height: calc($size * 2) !important;
+  }
+}
+
+.lh-14px {
+  @include lh(14px);
+}
+
+// border
+
+@mixin border($color) {
+  border: 1px solid $color !important;
+  @media screen and (min-width: 2500px) {
+    border: 2px solid $color !important;
+  }
+}
+
+.border-white {
+  @include border(white);
+}
+
+// thin border
+
+@mixin thinBorder($color) {
+  border: 0.5px solid $color !important;
+  @media screen and (min-width: 2500px) {
+    border: 1px solid $color !important;
+  }
+}
+
+.thin-border-white {
+  @include thinBorder(white);
+}
+
+//border-bottom
+
+@mixin underline($color) {
+  border-bottom: 1px solid $color !important;
+  @media screen and (min-width: 2500px) {
+    border-bottom: 2px solid $color !important;
+  }
+}
+
+.underline-white {
+  @include underline(white);
+}
+
+.underline {
+  text-decoration: underline !important;
+}
+
+// border-radius
+
+@mixin br($size) {
+  border-radius: $size !important;
+  @media screen and (min-width: 2500px) {
+    border-radius: calc($size * 2) !important;
+  }
+}
+
+.br-0 {
+  border-radius: 0px !important;
+}
+
+.br-10px {
+  @include br(10px);
+}
+
+//width
+
+@mixin width($size) {
+  width: $size !important;
+  @media screen and (min-width: 2500px) {
+    width: calc($size * 2) !important;
+  }
+}
+
+.w-fit-content {
+  width: fit-content !important;
+}
+
+.w-40 {
+  width: 40% !important;
+}
+
+.w-100vw {
+  width: 100vw !important;
+}
+
+.w-100px {
+  @include width(100px);
+}
+
+//height
+
+@mixin height($size) {
+  height: $size !important;
+  @media screen and (min-width: 2500px) {
+    height: calc($size * 2) !important;
+  }
+}
+
+.h-fit-content {
+  height: fit-content !important;
+}
+
+.h-40 {
+  height: 40%;
+}
+
+.h-100vh {
+  height: 100vh !important;
+}
+
+.h-50vh {
+  height: 50vh !important;
+}
+
+.h-100px {
+  @include height(100px);
+}
+
+//min-height
+
+.min-h-100vh {
+  min-height: 100vh !important;
+}
+
+//max-height
+
+.max-h-100vh {
+  max-height: 100vh !important;
+}
+
+//same width and height
+
+@mixin square($size) {
+  width: $size !important;
+  height: $size !important;
+  @media screen and (min-width: 2500px) {
+    width: calc($size * 2) !important;
+    height: calc($size * 2) !important;
+  }
+}
+
+.square-15 {
+  @include square(15px);
+}
+
+//overflow
+
+.overflow-hidden {
+  overflow: hidden !important;
+}
+
+.overflow-visible {
+  overflow: visible !important;
+}
+
+.nowrap {
+  white-space: nowrap !important;
+}
+
+.ellipse {
+  white-space: nowrap !important;
+  text-overflow: ellipsis !important;
+  overflow: hidden !important;
+}
+
+//position
+
+.top-0 {
+  top: 0 !important;
+}
+
+.right-0 {
+  right: 0 !important;
+}
+
+.bottom-0 {
+  bottom: 0 !important;
+}
+
+.left-0 {
+  left: 0 !important;
+}
+
+// z-index
+
+$max_z_index: 2;
+
+.z-index-1 {
+  z-index: 1 !important;
+}
+
+.z-index-max {
+  z-index: $max_z_index !important;
+}
+
+//opacity
+
+.opacity-40 {
+  opacity: 0.4 !important;
+}
+
+//rotate
+
+.rotate-180 {
+  transform: rotate(180deg);
+}
+
+/* Background Image */
+
+.bg-img-general {
+  background-position: center;
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-blend-mode: multiply;
+}
+
+//general
+
+.circle {
+  border-radius: 50% !important;
+}
+
+.pointer {
+  cursor: pointer !important;
+}
+
+.modal-holder {
+  width: 100vw !important;
+  height: 100vh !important;
+  background-color: rgba(0, 0, 0, 0.7) !important;
+  z-index: 1;
+}
