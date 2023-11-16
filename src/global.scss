@@ -306,8 +306,8 @@ input[type="reset"] {
   background: $color !important;
 }
 
-.bg-darkcyan {
-  @include bg(darkcyan);
+.bg-blue {
+  @include bg(blue);
 }
 
 .bg-transparent {
@@ -415,8 +415,12 @@ input[type="reset"] {
   }
 }
 
-.border-white {
-  @include border(white);
+.border-grey {
+  @include border(grey);
+}
+
+.border-black {
+  @include border(black);
 }
 
 // thin border
@@ -626,6 +630,12 @@ $max_z_index: 2;
 
 .pointer {
   cursor: pointer !important;
+}
+
+.prevent-select {
+  -webkit-user-select: none; /* Safari */
+  -ms-user-select: none; /* IE 10 and IE 11 */
+  user-select: none; /* Standard syntax */
 }
 
 .modal-holder {
