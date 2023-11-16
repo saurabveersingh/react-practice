@@ -47,7 +47,8 @@ const Pagination = () => {
               type="number"
               value={currentPage}
               onChange={(e) => {
-                setCurrentPage(e.target.value)
+                let val = parseInt(e.target.value)
+                setCurrentPage(val)
               }}
             />
           </div>
@@ -62,7 +63,8 @@ const Pagination = () => {
               type="number"
               value={maxPage}
               onChange={(e) => {
-                setMaxPage(e.target.value)
+                let val = parseInt(e.target.value)
+                setMaxPage(val)
               }}
             />
           </div>
