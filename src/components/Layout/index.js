@@ -1,11 +1,14 @@
 import React from "react"
-import PropTypes from "prop-types"
+import { Outlet } from "react-router-dom"
 
 import ToastMessage from "components/ToastMessage"
 
+import DeviceStore from "stores/global/DeviceStore"
+import MutableStore from "stores/global/MutableStore/MutableStore"
+
 // !definition of component
 /**
- * @param props --> children
+ *
  * @description --> Layout for all pages of the website
  * @returns Layout wrapper Component
  */
@@ -13,17 +16,15 @@ import ToastMessage from "components/ToastMessage"
 
 const Layout = (props) => {
   return (
-    <React.Fragment>
-      <main>
-        <ToastMessage />
-        {props.children}
-      </main>
-    </React.Fragment>
+    <DeviceStore>
+      <MutableStore>
+        <main>
+          <ToastMessage />
+          <Outlet />
+        </main>
+      </MutableStore>
+    </DeviceStore>
   )
-}
-
-Layout.propTypes = {
-  children: PropTypes.node.isRequired,
 }
 
 export default Layout

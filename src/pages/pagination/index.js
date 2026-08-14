@@ -1,10 +1,13 @@
 import { useContext, useState } from "react"
 
 import Paginate from "components/paginate"
+import Input from "components/custom-components/Input"
+import BackButton from "components/custom-components/BackButton"
 
 import { DeviceContext } from "stores/global/DeviceStore"
 import { MutableContext } from "stores/global/MutableStore/MutableStore"
 import { TOAST_MESSAGE } from "stores/global/MutableStore/MutableActions"
+import useToggle from "utility/custom-hooks/useToggle"
 
 // !definition of component
 /**
@@ -15,73 +18,41 @@ import { TOAST_MESSAGE } from "stores/global/MutableStore/MutableActions"
 // ! component
 
 const Pagination = () => {
-  const [showComponent, setShowComponent] = useState(false)
   const [currentPage, setCurrentPage] = useState(1)
   const [maxPage, setMaxPage] = useState(10)
   const [state, dispatch] = useContext(MutableContext)
   const Device = useContext(DeviceContext)
 
-  const valdateInput = (e) => {
+  const [showComponent, toggleShowComponent] = useToggle()
+
+  const validateInput = (e) => {
     e.preventDefault()
-    if (currentPage < 1) {
-      dispatch({ type: TOAST_MESSAGE, payload: { type: "error", message: "current page cannot be less than 1" } })
-    } else if (currentPage > maxPage) {
-      dispatch({ type: TOAST_MESSAGE, payload: { type: "error", message: "current page cannot be more than max page" } })
+    if (currentPage > maxPage) {
+      dispatch({
+        type: TOAST_MESSAGE,
+        payload: { type: "error", message: "current page cannot be more than max page" },
+      })
     } else {
-      setShowComponent(true)
+      toggleShowComponent()
     }
   }
 
   return (
     <div className="mt-5">
-      {!showComponent && (
-        <form className={`me-3 mb-3 ${Device.isMobile ? `d-flex flex-column gap-2` : ``}`} onSubmit={valdateInput}>
-          <div className={`${Device.isMobile ? `d-flex justify-content-between` : `d-inline`}`}>
-            <label className="mx-3" htmlFor="current-page-input">
-              Current Page:
-            </label>
-            <input
-              id="current-page-input"
-              name="current-page-input"
-              className="ms-2"
-              type="number"
-              value={currentPage}
-              onChange={(e) => {
-                let val = parseInt(e.target.value)
-                setCurrentPage(val)
-              }}
-            />
-          </div>
-          <div className={`${Device.isMobile ? `d-flex justify-content-between` : `d-inline`}`}>
-            <label className="mx-3" htmlFor="max-page-input">
-              Max Page:
-            </label>
-            <input
-              id="max-page-input"
-              name="max-page-input"
-              className="ms-2"
-              type="number"
-              value={maxPage}
-              onChange={(e) => {
-                let val = parseInt(e.target.value)
-                setMaxPage(val)
-              }}
-            />
-          </div>
+      {!showComponent ? (
+        <form className={`me-3 mb-3 ${Device.isMobile ? `d-flex flex-column gap-2` : ``}`} onSubmit={validateInput}>
+          <Input label="Current Page" type="number" value={currentPage} setValue={setCurrentPage} minValue={0} />
+          <Input label="Max Page" type="number" value={maxPage} setValue={setMaxPage} minValue={0} />
           <button className="mx-3 bg-black text-white px-3 py-1 br-10px">Go</button>
         </form>
-      )}
-      {showComponent && (
+      ) : (
         <>
-          <button
-            className="mx-3 mb-4 bg-black text-white px-3 py-1 br-10px"
+          <BackButton
             onClick={() => {
-              setShowComponent(false)
+              toggleShowComponent()
               setCurrentPage(1)
             }}
-          >
-            {"< Back"}
-          </button>
+          />
           <Paginate currentPage={currentPage} setCurrentPage={setCurrentPage} maxPage={maxPage} />
         </>
       )}

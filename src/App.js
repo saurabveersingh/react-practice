@@ -1,24 +1,27 @@
 import { BrowserRouter, Routes, Route } from "react-router-dom"
-import DeviceStore from "./stores/global/DeviceStore"
-import Layout from "./components/Layout"
-import Home from "./pages/home"
-import Pagination from "./pages/pagination"
-import MutableStore from "./stores/global/MutableStore/MutableStore"
+
+import Layout from "components/Layout"
+import Home from "pages/home"
+import Pagination from "pages/pagination"
+
+import DepreciationChartNav from "pages/depreciation-charts"
+import SingleAssetDepreciationChart from "pages/depreciation-charts/single-asset"
+import MultiAssetDepreciationChart from "pages/depreciation-charts/multi-asset"
 
 const App = () => {
   return (
-    <DeviceStore>
-      <MutableStore>
-        <Layout>
-          <BrowserRouter>
-            <Routes>
-              <Route index element={<Home />} />
-              <Route path="pagination" element={<Pagination />} />
-            </Routes>
-          </BrowserRouter>
-        </Layout>
-      </MutableStore>
-    </DeviceStore>
+    <BrowserRouter>
+      <Routes>
+        <Route element={<Layout />}>
+          <Route index element={<Home />} />
+          <Route path="pagination" element={<Pagination />} />
+          <Route path="depreciation-charts" element={<DepreciationChartNav />}>
+            <Route index element={<SingleAssetDepreciationChart />} />
+            <Route path="multi-asset" element={<MultiAssetDepreciationChart />} />
+          </Route>
+        </Route>
+      </Routes>
+    </BrowserRouter>
   )
 }
 

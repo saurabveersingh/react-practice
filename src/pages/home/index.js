@@ -16,6 +16,11 @@ const Home = () => {
             Pagination
           </a>
         </li>
+        <li>
+          <a href="/depreciation-charts" className="text-blue underline">
+            Depreciation Charts
+          </a>
+        </li>
       </ul>
     </div>
   )
