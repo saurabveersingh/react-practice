@@ -21,6 +21,11 @@ const Home = () => {
             Depreciation Charts
           </a>
         </li>
+        <li>
+          <a href="/llp-vs-company-tax-comparison" className="text-blue underline">
+            LLP Vs Company Tax Comparison
+          </a>
+        </li>
       </ul>
     </div>
   )

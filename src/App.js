@@ -7,6 +7,7 @@ import Pagination from "pages/pagination"
 import DepreciationChartNav from "pages/depreciation-charts"
 import SingleAssetDepreciationChart from "pages/depreciation-charts/single-asset"
 import MultiAssetDepreciationChart from "pages/depreciation-charts/multi-asset"
+import LlpVsCompanyTaxComparison from "pages/llp-vs-company-tax-comparison"
 
 const App = () => {
   return (
@@ -19,6 +20,7 @@ const App = () => {
             <Route index element={<SingleAssetDepreciationChart />} />
             <Route path="multi-asset" element={<MultiAssetDepreciationChart />} />
           </Route>
+          <Route path="llp-vs-company-tax-comparison" element={<LlpVsCompanyTaxComparison />} />
         </Route>
       </Routes>
     </BrowserRouter>
